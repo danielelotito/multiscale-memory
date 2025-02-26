@@ -1,0 +1,12 @@
+# DO NOT CHANGE USED FOR FIG 1 INTRO
+beta: 1
+k: null 
+u: 2
+tau_s: 10
+tau_J: 130
+rho: 0
+K: 4
+N: 16
+pattern_distribution: rademacher
+prob_distribution: uniform
+tau_h: 10

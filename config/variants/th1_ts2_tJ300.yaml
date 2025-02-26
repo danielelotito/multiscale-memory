@@ -1,0 +1,4 @@
+model:
+  tau_h: 1
+  tau_s: 2
+  tau_J: 300

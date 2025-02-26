@@ -1,0 +1,17 @@
+defaults:
+  - model: default_deviations
+
+output_dir: outputs_deviation_analysis/${now:%Y-%m-%d}/${now:%H-%M-%S}
+# deviations_path: "outputs/2024-11-24/18-45-26/data/large_deviations" # ???  # Path to deviation events directory
+deviations_path: "figure_outputs/runs/12-42-57-large-deviations/data/large_deviations" # ???  # Path to deviation events directory
+
+# Analysis parameters
+M: 100  # Number of noisy copies per pattern
+noise_levels: [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]
+
+
+generate_plots: true
+
+simulation:
+  T: 100
+  dt: 1

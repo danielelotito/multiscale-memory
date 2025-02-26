@@ -1,0 +1,12 @@
+# DO NOT CHANGE USED FOR FIG 2 DELTA
+beta: 1000
+k: null 
+u: 200
+tau_s: 1
+tau_J: null # tau Jis changed form the multirun 250, 500, 800
+rho: 0
+K: 50
+N: 200
+pattern_distribution: rademacher
+prob_distribution: uniform
+tau_h: 1

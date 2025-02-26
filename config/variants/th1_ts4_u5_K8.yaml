@@ -1,0 +1,5 @@
+model:
+  tau_h: 1
+  tau_s: 4
+  u: 5
+  K: 8

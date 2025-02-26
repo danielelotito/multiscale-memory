@@ -1,0 +1,7 @@
+model:
+  tau_h: 1
+  tau_s: 2
+  tau_J: 40
+  u: 10
+  beta: 0.01
+

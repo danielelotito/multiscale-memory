@@ -1,0 +1,64 @@
+path: 0 
+dir: null
+# dir: multirun\2024-11-06\20-28-54_T700_tau_J50_variando_NeK
+# path: multirun\2024-11-06\21-27-22_T 700 tauJ20beta1000_k1_variandoNeK
+combined_stats_path: null # figure_outputs\run_stats_up_totau_J_140.csv
+append_combined_stats_path: figure_outputs\12-17-06-K-5-10\data\combined_run_stats.csv
+save:
+  enabled: true
+  folders:
+    data: ${hydra:runtime.cwd}/collection_outputs/${now:%Y-%m-%d}/${now:%H-%M-%S}/data
+    static_vis: ${hydra:runtime.cwd}/collection_outputs/${now:%Y-%m-%d}/${now:%H-%M-%S}/static_vis
+
+recompute_theoretical_std : true 
+reduce_ylim: true 
+
+font_size: 44
+show_theoretical: true
+max_runs_to_process: 40
+visualizations:
+  static:
+    - deltaFnorm2_kt
+    - residuals
+    # - fnorm_residuals_hist
+    - fluctuation_scaling_std
+    - fluctuation_scaling_variance
+  fluct:
+    - rho_std
+    # - slice_std_N
+    # - slice_std_tau_J_K
+    # - slice_std_K_tau_J
+    # - tau_J_std
+    # - 3d_var
+    # - alpha_var_fit
+    # - K_std_tau_J
+    # Standard deviation vs K with error bars
+    # # - slice_std_K_N
+    # # - alpha_std_fit
+    # # - N_std  # Standard deviation vs N with error bars
+    # # - N_var  # Variance vs N with error bars
+    # # - K_std_N  # Standard deviation vs K with error bars
+    # - 3d_std_fit
+    # - K_var  # Variance vs K with error bars
+  errorbars:
+    power_coeff: true   # Show fit with coefficient (y = ax^γ)
+    not_power_coeff: false  # Show pure power law fit (y = x^γ)
+  fit3d:
+    power_coeff: true   # Show fit with coefficient (y = ax^γ)
+    not_power_coeff: false  # Show pure power law fit (y = x^γ)
+  log_scale: false
+
+csv_filename: simulation_dict.csv
+
+# The data columns that should be present in CSV files
+required_columns:
+  - time
+  - diff_normF2
+  - diff_normF2_k
+  - energies
+  - theoretical_y
+  - horizontal_line_y
+  - offset_from_theoretical
+  - rho
+
+merge_tex: true

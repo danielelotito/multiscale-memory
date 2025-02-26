@@ -1,0 +1,11 @@
+K: 20
+N: 100
+beta: 1000
+k: null 
+u: 2000
+tau_s: 1
+rho: 0
+tau_J: 20
+pattern_distribution: rademacher
+prob_distribution: uniform
+tau_h: 1

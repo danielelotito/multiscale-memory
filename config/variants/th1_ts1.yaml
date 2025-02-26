@@ -1,0 +1,3 @@
+model:
+  tau_h: 1
+  tau_s: 1

@@ -1,0 +1,4 @@
+model_class: MemoryMatrixAssociativeMemory
+name: Markov Chain Transition Matrix Extimation
+model:
+  delay_transition

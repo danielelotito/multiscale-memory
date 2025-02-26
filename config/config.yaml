@@ -1,0 +1,73 @@
+defaults:
+  - model:  default # N2 # default
+  - run_schedule: neco # hebb_conv_3 # different_timescales # gaussian_randint_field
+  - _self_
+
+
+hydra:
+  run:
+    dir: ./outputs/${now:%Y-%m-%d}/${now:%H-%M-%S}
+    # dir: ${hydra:runtime.cwd}/outputs/${now:%Y-%m-%d}/${now:%H-%M-%S}
+
+
+name: Default
+model_class: default
+
+
+simulation:
+  T: 2000
+  use_transients: false
+  dt: 1  # Set to 1 as the base discretization step
+
+max_size: 1e5
+Js_size: 1e6 #${model.N} * ${model.N} * ${simulation.T}
+
+
+skip_default: true
+
+stationarity_analysis:
+  enabled: true
+  significance: 0.01
+  window_size: 100
+  min_periods: 600
+  bins: 100
+
+save:
+  enabled: true
+  folders:
+    data: ${hydra:runtime.cwd}/outputs/${now:%Y-%m-%d}/${now:%H-%M-%S}/data
+    static_vis: "static_visualizations"
+    dynamic_vis: "dynamic_visualizations"
+
+large_deviations_callback:
+  activate: false
+  max_points: 10
+  max_N: 100
+  cooldown: 100
+
+visualizations:
+  log_X: false
+  static:
+    # - neural_activities
+    # - synaptic_hebb_difference
+    # - synaptic_hebb_abs_difference
+    # - synaptic_hebb_norm_difference
+    # - synaptic_hebb_F_norm_difference
+    # - synaptic_weights
+    # - external_fields
+    - deltaFnorm2_kt
+    # - overlaps
+    - energy
+    - autocorrelation
+    # - stationarity
+    - deltaFnorm2_kt_residuals
+    - deltaFnorm2_kt_residuals_hist
+
+
+
+  dynamic:
+    # - neural_activities_gif
+    # - synaptic_weights_gif
+    # - synaptic_hebb_difference_gif
+    # - phase_space_gif
+    

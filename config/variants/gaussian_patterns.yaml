@@ -1,0 +1,4 @@
+# Gaussian pattern distribution
+name: gaussian patterns
+model:
+  pattern_distribution: gaussian

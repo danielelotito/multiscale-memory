@@ -1,0 +1,6 @@
+model:
+  tau_h: 1
+  tau_s: 2
+  tau_J: 16
+  beta: 100
+

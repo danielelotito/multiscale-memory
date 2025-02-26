@@ -1,0 +1,6 @@
+# Variable field update interval
+name: Variable field update
+model:
+  tau_h: 
+    min: 1
+    max: 10
